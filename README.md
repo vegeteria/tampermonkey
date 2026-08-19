@@ -6,6 +6,37 @@ A collection of useful Tampermonkey scripts to bypass timers, auto-select links,
 
 Make sure you have a userscript manager installed like [Tampermonkey](https://www.tampermonkey.net/) before installing these scripts.
 
+## 🛡️ Recommended Extension (uBlock Origin Lite)
+
+For the best experience, we **highly recommend** installing **uBlock Origin Lite** alongside these scripts. It helps block popups and trackers that can interfere with the bypasses, making the scripts work much better!
+
+Select your browser below to install the extension:
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh">
+          <img src="https://img.shields.io/badge/Google_Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome" /><br>
+          <b>Install for Chrome</b>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin-lite/">
+          <img src="https://img.shields.io/badge/Mozilla_Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox" /><br>
+          <b>Install for Firefox</b>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin-lite/noamefacjomeijbaglflileokjhkehlb">
+          <img src="https://img.shields.io/badge/Microsoft_Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge" /><br>
+          <b>Install for Edge</b>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
 ### 📜 Available Scripts:
 
 #### GDFlix & DriveSeed Smart Link Copier (Mobile Toggle)
