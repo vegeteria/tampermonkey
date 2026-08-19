@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         HDHub4u & HBLinks Auto-Selector
+// @name         HDHub4u & HBLinks Auto-Selector (Time Travel Nuke)
 // @namespace    http://tampermonkey.net/
-// @version      2.2
-// @description  Zeroes timers and aggressively scans for all fake button types.
+// @version      2.5
+// @description  Overrides setTimeout and the system clock (Date.now) to bypass strict timers.
 // @match        *://*.greenmountmotors.com/*
 // @match        *://greenmountmotors.com/*
 // @match        *://*.hblinks.co/*
@@ -17,12 +17,23 @@
 (function() {
     'use strict';
 
-    // 1. Zero out timers directly in page context (safe for Firefox & Chromium)
+    // 1. THE TIME TRAVEL NUKE
     try {
-        const _setTimeout = window.setTimeout;
-        const _setInterval = window.setInterval;
-        window.setTimeout = (fn, delay, ...args) => _setTimeout(fn, 0, ...args);
-        window.setInterval = (fn, delay, ...args) => _setInterval(fn, 10, ...args);
+        // A. Speed up the physical timer loops
+        const _setTimeout = unsafeWindow.setTimeout;
+        const _setInterval = unsafeWindow.setInterval;
+        unsafeWindow.setTimeout = (fn, delay, ...args) => _setTimeout(fn, 0, ...args);
+        unsafeWindow.setInterval = (fn, delay, ...args) => _setInterval(fn, 10, ...args);
+
+        // B. Fast-forward the system clock by 20 seconds (20,000 milliseconds)
+        const _dateNow = unsafeWindow.Date.now;
+        unsafeWindow.Date.now = () => _dateNow() + 20000;
+
+        // C. Fast-forward the high-resolution performance clock
+        if (unsafeWindow.performance && unsafeWindow.performance.now) {
+            const _perfNow = unsafeWindow.performance.now.bind(unsafeWindow.performance);
+            unsafeWindow.performance.now = () => _perfNow() + 20000;
+        }
     } catch (e) {
         console.error("Timer override error:", e);
     }
@@ -43,7 +54,6 @@
                 for (let el of elements) {
                     const style = window.getComputedStyle(el);
                     
-                    // Firefox safety check: ignore null, hidden, or invisible elements
                     if (!style || style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
                         continue;
                     }
