@@ -17,16 +17,14 @@
 (function() {
     'use strict';
 
-    // 1. THE NUKE (FIREFOX SAFE): Edit the timers directly in the window memory
-    // This completely bypasses the need to inject <script> tags, preventing Firefox crashes.
+    // 1. Zero out timers directly in page context (safe for Firefox & Chromium)
     try {
-        const _setTimeout = unsafeWindow.setTimeout;
-        const _setInterval = unsafeWindow.setInterval;
-
-        unsafeWindow.setTimeout = (fn, delay, ...args) => _setTimeout(fn, 0, ...args);
-        unsafeWindow.setInterval = (fn, delay, ...args) => _setInterval(fn, 10, ...args);
-    } catch (err) {
-        console.error("Timer bypass encountered an error:", err);
+        const _setTimeout = window.setTimeout;
+        const _setInterval = window.setInterval;
+        window.setTimeout = (fn, delay, ...args) => _setTimeout(fn, 0, ...args);
+        window.setInterval = (fn, delay, ...args) => _setInterval(fn, 10, ...args);
+    } catch (e) {
+        console.error("Timer override error:", e);
     }
 
     const host = window.location.hostname.toLowerCase();
@@ -44,8 +42,8 @@
 
                 for (let el of elements) {
                     const style = window.getComputedStyle(el);
-
-                    // Firefox null check
+                    
+                    // Firefox safety check: ignore null, hidden, or invisible elements
                     if (!style || style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
                         continue;
                     }
@@ -80,8 +78,7 @@
                 const links = document.querySelectorAll('a');
                 for (let a of links) {
                     const style = window.getComputedStyle(a);
-
-                    // Firefox null check
+                    
                     if (style && style.display !== 'none' && style.opacity !== '0') {
                         const text = (a.textContent || '').toLowerCase();
                         const href = (a.href || '').toLowerCase();
@@ -90,6 +87,7 @@
                             clearInterval(loop);
                             console.log("✅ Hub Cloud found! Redirecting...");
                             window.location.replace(a.href);
+                            return;
                         }
                     }
                 }
@@ -97,7 +95,6 @@
         }
     };
 
-    // Safely wait for the page to actually exist before scanning for buttons
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', startAutomation);
     } else {
