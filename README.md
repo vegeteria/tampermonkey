@@ -31,12 +31,12 @@ Make sure you have a userscript manager installed like [Tampermonkey](https://ww
 #### Just Bypass Pahe Links
 > Tested with Tampermonkey on Mozilla Firefox. Resolves Pahe link relays while preserving server-required verification, CAPTCHA, and waits.
 
-👉 **[Click here to install Just Bypass Pahe Links](https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Just%20Bypass%20Pahe%20Links.user.js)**
+👉 **[Click here to install Just Bypass Pahe Links](https://update.greasyfork.org/scripts/561205/Just%20Bypass%20Pahe%20Links.user.js)**
 
 #### uhdmovies - Auto Bypass Timer and Click Start Verification
 > Automatically click "Start Verification" after the 10-second timer finishes or button appears
 
-👉 **[Click here to install uhdmovies - Auto Bypass Timer and Click Start Verification](https://raw.githubusercontent.com/vegeteria/tampermonkey/main/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js)**
+👉 **[Click here to install uhdmovies - Auto Bypass Timer and Click Start Verification](https://update.greasyfork.org/scripts/525828/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js)**
 
 ---
 
