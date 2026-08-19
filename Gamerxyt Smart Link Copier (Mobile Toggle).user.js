@@ -8,6 +8,8 @@
 // @run-at       document-end
 // @grant        none
 // @license      MIT
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Gamerxyt%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Gamerxyt%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js
 // ==/UserScript==
 
 (function() {

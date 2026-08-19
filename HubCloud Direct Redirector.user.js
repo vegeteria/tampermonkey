@@ -10,6 +10,8 @@
 // @run-at       document-end
 // @grant        none
 // @license      MIT
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HubCloud%20Direct%20Redirector.user.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HubCloud%20Direct%20Redirector.user.js
 // ==/UserScript==
 
 (function() {

@@ -10,6 +10,8 @@
 // @run-at       document-end
 // @grant        none
 // @license      MIT
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/GDFlix%20%26%20DriveSeed%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/GDFlix%20%26%20DriveSeed%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js
 // ==/UserScript==
 
 (function() {

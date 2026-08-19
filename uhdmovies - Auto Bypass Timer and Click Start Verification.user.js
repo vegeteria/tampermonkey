@@ -6,8 +6,9 @@
 // @description Automatically click "Start Verification" after the 10-second timer finishes or button appears
 // @match https://*.unblockedgames.*/*
 // @grant none
-// @downloadURL https://update.greasyfork.org/scripts/525828/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js
-// @updateURL https://update.greasyfork.org/scripts/525828/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.meta.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js
+// @license      MIT
 // ==/UserScript==
 
 (function () {
@@ -45,6 +46,7 @@
 // @description  Automates clicking buttons and handling delays between each step for 3rd URL
 // @match        https://tech.unblockedgames.world/*
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function () {

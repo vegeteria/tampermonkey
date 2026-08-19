@@ -10,6 +10,8 @@
 // @run-at       document-start
 // @grant        none
 // @license      MIT
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js
 // ==/UserScript==
 
 (function() {

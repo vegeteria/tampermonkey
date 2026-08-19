@@ -96,8 +96,9 @@
 // @match        *://*.autoshieldd.com/*
 // @run-at       document-start
 // @grant        none
-// @downloadURL https://update.greasyfork.org/scripts/561205/Just%20Bypass%20Pahe%20Links.user.js
-// @updateURL https://update.greasyfork.org/scripts/561205/Just%20Bypass%20Pahe%20Links.meta.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Just%20Bypass%20Pahe%20Links.user.js
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Just%20Bypass%20Pahe%20Links.user.js
+// @license      MIT
 // ==/UserScript==
 
 (function () {
