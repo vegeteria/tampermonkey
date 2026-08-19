@@ -1,0 +1,43 @@
+# Tampermonkey Scripts: Technical Overview
+
+This document provides a detailed technical explanation of the 6 scripts located in your `tampermonkey_scripts` directory. They are categorized into the 4 custom scripts you authored and th>
+
+---
+
+## 🛠️ Your Custom Scripts
+
+### 1. GDFlix & DriveSeed Smart Link Copier (Mobile Toggle)
+* **Target Domains:** `driveseed.org`, `gdflix.io`
+* **Purpose:** Allows users to safely copy the final destination link without triggering invasive pop-under ads or unwanted downloads.
+* **How it works:**
+  * **UI Injection:** It injects a floating toggle button (`📋 Copy Mode: OFF`) in the bottom-right corner of the viewport.
+  * **Event Interception:** When toggled ON, the script attaches a `click` event listener to the `document` with the `capture` flag set to `true`. This allows the script to intercept clicks>
+  * **Clipboard API:** If the user clicks a valid link while Copy Mode is active, `e.preventDefault()` and `e.stopImmediatePropagation()` are fired to completely freeze the site's default b>
+  * **Feedback Loop:** It temporarily changes the clicked button's color to green (`#28a745`), updates the text to "✅ Link Copied!", and reverts itself (and Copy Mode) back to normal after>
+
+### 2. Gamerxyt Smart Link Copier (Mobile Toggle)
+* **Target Domains:** `gamerxyt.com`
+* **Purpose:** Operates identically to the GDFlix script but specifically targets the Gamerxyt domain.
+* **How it works:**
+  * Uses the exact same state machine and UI logic as GDFlix. It acts as a shield against Gamerxyt's invisible ad overlays by grabbing the raw `href` attribute of the closest `<a>` tag and >
+
+### 3. HDHub4u & HBLinks Auto-Selector
+* **Target Domains:** `greenmountmotors.com`, `hblinks.co`
+* **Purpose:** Aggressively bypasses wait timers and automatically clicks through fake buttons to reach the actual download link.
+* **How it works:**
+  * **The "Timer Nuke":** At `document-start`, it injects an inline script directly into the webpage's `<head>`. This script maliciously overrides the browser's native `window.setTimeout` a>
+  * **GreenmountMotors Logic:** It sets up a rapid 500ms polling loop scanning the DOM for visible elements (`display !== 'none'`) containing keywords like "continue", "get link", or "start>
+  * **HBLinks Logic:** It scans the page's anchor (`<a>`) tags looking for the specific text "Hub Cloud". When it finds it, it triggers an immediate `window.location.replace(a.href)` to red>
+
+### 4. HubCloud Direct Redirector
+* **Target Domains:** `hubcloud.cx`, `hubcloud.club`
+* **Purpose:** Bypasses HubCloud's notorious click-hijacking invisible buttons.
+* **How it works:**
+  * Uses a simple `setInterval` loop checking for an element with the ID `download`.
+  * It verifies if the button's `href` attribute leads to `gamerxyt.com`.
+  * Instead of simulating a click (which would trigger HubCloud's invisible ad layer), it extracts the URL and uses `window.location.replace()`. This forces the browser to silently navigate>
+
+---
+
+## 🌐 Third-Party Bypasser Scripts
+
