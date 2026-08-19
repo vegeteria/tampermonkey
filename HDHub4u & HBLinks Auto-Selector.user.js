@@ -14,19 +14,6 @@
 // @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js
 // ==/UserScript==
 
-// ==UserScript==
-// @name         HDHub4u & HBLinks Auto-Selector (Firefox Ultimate Fix)
-// @namespace    http://tampermonkey.net/
-// @version      2.4
-// @description  Zeroes timers using unsafeWindow to prevent Firefox DOM injection crashes.
-// @match        *://*.greenmountmotors.com/*
-// @match        *://greenmountmotors.com/*
-// @match        *://*.hblinks.co/*
-// @match        *://hblinks.co/*
-// @run-at       document-start
-// @grant        unsafeWindow
-// ==/UserScript==
-
 (function() {
     'use strict';
 
@@ -35,7 +22,7 @@
     try {
         const _setTimeout = unsafeWindow.setTimeout;
         const _setInterval = unsafeWindow.setInterval;
-        
+
         unsafeWindow.setTimeout = (fn, delay, ...args) => _setTimeout(fn, 0, ...args);
         unsafeWindow.setInterval = (fn, delay, ...args) => _setInterval(fn, 10, ...args);
     } catch (err) {
@@ -57,7 +44,7 @@
 
                 for (let el of elements) {
                     const style = window.getComputedStyle(el);
-                    
+
                     // Firefox null check
                     if (!style || style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
                         continue;
@@ -93,7 +80,7 @@
                 const links = document.querySelectorAll('a');
                 for (let a of links) {
                     const style = window.getComputedStyle(a);
-                    
+
                     // Firefox null check
                     if (style && style.display !== 'none' && style.opacity !== '0') {
                         const text = (a.textContent || '').toLowerCase();
