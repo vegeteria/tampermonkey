@@ -31,9 +31,9 @@ To use these scripts, you must first install a userscript manager like **Tamperm
   </table>
 </div>
 
-## 🛡️ Recommended Extension (uBlock Origin Lite)
+## 🛡️ Recommended Extension (uBlock Origin / Lite)
 
-For the best experience, we **highly recommend** installing **uBlock Origin Lite** alongside these scripts. It helps block popups and trackers that can interfere with the bypasses, making the scripts work much better!
+For the best experience, we **highly recommend** installing **uBlock Origin Lite** (or **uBlock Origin** on Firefox) alongside these scripts. It helps block popups and trackers that can interfere with the bypasses, making the scripts work much better!
 
 Select your browser below to install the extension:
 
@@ -47,7 +47,7 @@ Select your browser below to install the extension:
         </a>
       </td>
       <td align="center">
-        <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin-lite/">
+        <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">
           <img src="https://img.shields.io/badge/Mozilla_Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox" /><br>
           <b>Install for Firefox</b>
         </a>
