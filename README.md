@@ -4,7 +4,32 @@ A collection of useful Tampermonkey scripts to bypass timers, auto-select links,
 
 ## 🚀 Installation
 
-Make sure you have a userscript manager installed like [Tampermonkey](https://www.tampermonkey.net/) before installing these scripts.
+To use these scripts, you must first install a userscript manager like **Tampermonkey** for your browser:
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">
+          <img src="https://img.shields.io/badge/Google_Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome" /><br>
+          <b>Install Tampermonkey</b>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">
+          <img src="https://img.shields.io/badge/Mozilla_Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox" /><br>
+          <b>Install Tampermonkey</b>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd">
+          <img src="https://img.shields.io/badge/Microsoft_Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge" /><br>
+          <b>Install Tampermonkey</b>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 🛡️ Recommended Extension (uBlock Origin Lite)
 
