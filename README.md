@@ -10,19 +10,19 @@ To use these scripts, you must first install a userscript manager like **Tamperm
   <table>
     <tr>
       <td align="center">
-        <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">
+        <a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">
           <img src="https://img.shields.io/badge/Google_Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome" /><br>
           <b>Install Tampermonkey</b>
         </a>
       </td>
       <td align="center">
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">
+        <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/">
           <img src="https://img.shields.io/badge/Mozilla_Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox" /><br>
           <b>Install Tampermonkey</b>
         </a>
       </td>
       <td align="center">
-        <a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd">
+        <a target="_blank" rel="noopener noreferrer" href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd">
           <img src="https://img.shields.io/badge/Microsoft_Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge" /><br>
           <b>Install Tampermonkey</b>
         </a>
@@ -41,19 +41,19 @@ Select your browser below to install the extension:
   <table>
     <tr>
       <td align="center">
-        <a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh">
+        <a target="_blank" rel="noopener noreferrer" href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh">
           <img src="https://img.shields.io/badge/Google_Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome" /><br>
           <b>Install for Chrome</b>
         </a>
       </td>
       <td align="center">
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin-lite/">
+        <a target="_blank" rel="noopener noreferrer" href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin-lite/">
           <img src="https://img.shields.io/badge/Mozilla_Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox" /><br>
           <b>Install for Firefox</b>
         </a>
       </td>
       <td align="center">
-        <a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin-lite/noamefacjomeijbaglflileokjhkehlb">
+        <a target="_blank" rel="noopener noreferrer" href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin-lite/noamefacjomeijbaglflileokjhkehlb">
           <img src="https://img.shields.io/badge/Microsoft_Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge" /><br>
           <b>Install for Edge</b>
         </a>
@@ -67,32 +67,32 @@ Select your browser below to install the extension:
 #### GDFlix & DriveSeed Smart Link Copier (Mobile Toggle)
 > Adds a floating toggle button so you can navigate normally, then turn on Copy Mode for the final link.
 
-👉 **[Click here to install GDFlix & DriveSeed Smart Link Copier (Mobile Toggle)](https://raw.githubusercontent.com/vegeteria/tampermonkey/main/GDFlix%20%26%20DriveSeed%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js)**
+👉 **<a href="https://raw.githubusercontent.com/vegeteria/tampermonkey/main/GDFlix%20%26%20DriveSeed%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js" target="_blank" rel="noopener noreferrer">Click here to install GDFlix & DriveSeed Smart Link Copier (Mobile Toggle)</a>**
 
 #### Gamerxyt Smart Link Copier (Mobile Toggle)
 > Adds a floating toggle button to intercept download buttons on Gamerxyt only when turned ON.
 
-👉 **[Click here to install Gamerxyt Smart Link Copier (Mobile Toggle)](https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Gamerxyt%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js)**
+👉 **<a href="https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Gamerxyt%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js" target="_blank" rel="noopener noreferrer">Click here to install Gamerxyt Smart Link Copier (Mobile Toggle)</a>**
 
 #### HDHub4u & HBLinks Auto-Selector
 > Zeroes timers and aggressively scans for all fake button types.
 
-👉 **[Click here to install HDHub4u & HBLinks Auto-Selector](https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js)**
+👉 **<a href="https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js" target="_blank" rel="noopener noreferrer">Click here to install HDHub4u & HBLinks Auto-Selector</a>**
 
 #### HubCloud Direct Redirector
 > Bypasses the click-hijacker and redirects directly to Gamerxyt.
 
-👉 **[Click here to install HubCloud Direct Redirector](https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HubCloud%20Direct%20Redirector.user.js)**
+👉 **<a href="https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HubCloud%20Direct%20Redirector.user.js" target="_blank" rel="noopener noreferrer">Click here to install HubCloud Direct Redirector</a>**
 
 #### Just Bypass Pahe Links
 > Tested with Tampermonkey on Mozilla Firefox. Resolves Pahe link relays while preserving server-required verification, CAPTCHA, and waits.
 
-👉 **[Click here to install Just Bypass Pahe Links](https://update.greasyfork.org/scripts/561205/Just%20Bypass%20Pahe%20Links.user.js)**
+👉 **<a href="https://update.greasyfork.org/scripts/561205/Just%20Bypass%20Pahe%20Links.user.js" target="_blank" rel="noopener noreferrer">Click here to install Just Bypass Pahe Links</a>**
 
 #### uhdmovies - Auto Bypass Timer and Click Start Verification
 > Automatically click "Start Verification" after the 10-second timer finishes or button appears
 
-👉 **[Click here to install uhdmovies - Auto Bypass Timer and Click Start Verification](https://update.greasyfork.org/scripts/525828/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js)**
+👉 **<a href="https://update.greasyfork.org/scripts/525828/uhdmovies%20-%20Auto%20Bypass%20Timer%20and%20Click%20Start%20Verification.user.js" target="_blank" rel="noopener noreferrer">Click here to install uhdmovies - Auto Bypass Timer and Click Start Verification</a>**
 
 ---
 
