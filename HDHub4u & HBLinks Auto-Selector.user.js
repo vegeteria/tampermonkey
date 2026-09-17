@@ -4,7 +4,9 @@
 // @version      2.5
 // @description  Overrides setTimeout and the system clock (Date.now) to bypass strict timers.
 // @match        *://*.greenmountmotors.com/*
+// @match        *://*.greenmotors.cc/*
 // @match        *://greenmountmotors.com/*
+// @match        *://greenmotors.cc/*
 // @match        *://*.hblinks.co/*
 // @match        *://hblinks.co/*
 // @run-at       document-start
@@ -43,9 +45,9 @@
     const startAutomation = () => {
 
         // ==========================================
-        // STAGE 1A: GreenmountMotors (Aggressive Clicker)
+        // STAGE 1A: greenmotors (Aggressive Clicker)
         // ==========================================
-        if (host.includes('greenmountmotors')) {
+        if (host.includes('greenmotors')) {
             console.log("🚦 Mediator Page: Scanning for hidden/fake buttons...");
 
             setInterval(() => {
@@ -53,14 +55,14 @@
 
                 for (let el of elements) {
                     const style = window.getComputedStyle(el);
-                    
+
                     if (!style || style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
                         continue;
                     }
 
                     const text = (el.textContent || el.innerText || '').toLowerCase().replace(/\s+/g, ' ');
 
-                    if (text.includes('continue') || text.includes('get link') || text.includes('start') || text.includes('go to link')) {
+                    if (text.includes('click to continue') || text.includes('get links') || text.includes('start') || text.includes('go to link')) {
                         console.log("✅ Found active button! Triggering:", text);
 
                         if (el.tagName === 'A' && el.href && el.href.startsWith('http')) {
@@ -88,7 +90,7 @@
                 const links = document.querySelectorAll('a');
                 for (let a of links) {
                     const style = window.getComputedStyle(a);
-                    
+
                     if (style && style.display !== 'none' && style.opacity !== '0') {
                         const text = (a.textContent || '').toLowerCase();
                         const href = (a.href || '').toLowerCase();
