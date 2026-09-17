@@ -3,8 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      9.0
 // @description  Bypasses the click-hijacker and redirects directly to Gamerxyt.
-// @match        *://hubcloud.cx/*
-// @match        *://*.hubcloud.cx/*
+// @match        *://hubcloud.ist/*
+// @match        *://*.hubcloud.ist/*
 // @match        *://hubcloud.club/*
 // @match        *://*.hubcloud.club/*
 // @run-at       document-end
