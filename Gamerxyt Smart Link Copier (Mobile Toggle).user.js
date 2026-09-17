@@ -1,110 +1,116 @@
 // ==UserScript==
-// @name         Gamerxyt Smart Link Copier (Mobile Toggle)
+// @name         HDHub4u & HBLinks Auto-Selector (Time Travel Nuke)
 // @namespace    http://tampermonkey.net/
-// @version      2.0
-// @description  Adds a floating toggle button to intercept download buttons on Gamerxyt only when turned ON.
-// @match        *://*.gamerxyt.com/*
-// @match        *://gamerxyt.com/*
-// @run-at       document-end
-// @grant        none
+// @version      2.5
+// @description  Overrides setTimeout and the system clock (Date.now) to bypass strict timers.
+// @match        *://*.greenmountmotors.com/*
+// @match        *://*.greenmotors.cc/*
+// @match        *://greenmountmotors.com/*
+// @match        *://greenmotors.cc/*
+// @match        *://*.hblinks.co/*
+// @match        *://hblinks.co/*
+// @run-at       document-start
+// @grant        unsafeWindow
 // @license      MIT
-// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Gamerxyt%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js
-// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/Gamerxyt%20Smart%20Link%20Copier%20%28Mobile%20Toggle%29.user.js
+// @updateURL    https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js
+// @downloadURL  https://raw.githubusercontent.com/vegeteria/tampermonkey/main/HDHub4u%20%26%20HBLinks%20Auto-Selector.user.js
 // ==/UserScript==
 
 (function() {
     'use strict';
 
-    // 1. State variable: OFF by default so you can navigate normally
-    let isCopyMode = false;
+    // 1. THE TIME TRAVEL NUKE
+    try {
+        // A. Speed up the physical timer loops
+        const _setTimeout = unsafeWindow.setTimeout;
+        const _setInterval = unsafeWindow.setInterval;
+        unsafeWindow.setTimeout = (fn, delay, ...args) => _setTimeout(fn, 0, ...args);
+        unsafeWindow.setInterval = (fn, delay, ...args) => _setInterval(fn, 10, ...args);
 
-    // 2. Create the floating button
-    const toggleBtn = document.createElement('div');
-    toggleBtn.innerHTML = "📋 Copy Mode: OFF";
-    Object.assign(toggleBtn.style, {
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-        backgroundColor: '#dc3545', // Red when OFF
-        color: 'white',
-        padding: '12px 18px',
-        borderRadius: '50px',
-        fontFamily: 'sans-serif',
-        fontWeight: 'bold',
-        fontSize: '14px',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-        cursor: 'pointer',
-        zIndex: '999999', // Stays on top
-        userSelect: 'none',
-        transition: 'background-color 0.3s'
-    });
+        // B. Fast-forward the system clock by 20 seconds (20,000 milliseconds)
+        const _dateNow = unsafeWindow.Date.now;
+        unsafeWindow.Date.now = () => _dateNow() + 20000;
 
-    // 3. Add toggle functionality
-    toggleBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        isCopyMode = !isCopyMode;
-
-        if (isCopyMode) {
-            toggleBtn.innerHTML = "✅ Copy Mode: ON";
-            toggleBtn.style.backgroundColor = '#28a745'; // Green when ON
-        } else {
-            toggleBtn.innerHTML = "📋 Copy Mode: OFF";
-            toggleBtn.style.backgroundColor = '#dc3545'; // Red when OFF
+        // C. Fast-forward the high-resolution performance clock
+        if (unsafeWindow.performance && unsafeWindow.performance.now) {
+            const _perfNow = unsafeWindow.performance.now.bind(unsafeWindow.performance);
+            unsafeWindow.performance.now = () => _perfNow() + 20000;
         }
-    });
+    } catch (e) {
+        console.error("Timer override error:", e);
+    }
 
-    document.body.appendChild(toggleBtn);
+    const host = window.location.hostname.toLowerCase();
 
-    console.log("📋 Gamerxyt Copier ready. Turn on Copy Mode to intercept links!");
+    const startAutomation = () => {
 
-    // 4. Intercept clicks ONLY if Copy Mode is ON
-    document.addEventListener('click', function(e) {
+        // ==========================================
+        // STAGE 1A: greenmotors (Aggressive Clicker)
+        // ==========================================
+        if (host.includes('greenmotors')) {
+            console.log("🚦 Mediator Page: Scanning for hidden/fake buttons...");
 
-        // Ignore clicks on our floating button
-        if (e.target === toggleBtn || toggleBtn.contains(e.target)) return;
+            setInterval(() => {
+                const elements = document.querySelectorAll('a, button, .btn, [class*="button"]');
 
-        // If Copy Mode is OFF, let the site work normally
-        if (!isCopyMode) return;
+                for (let el of elements) {
+                    const style = window.getComputedStyle(el);
 
-        // Check if what you clicked is a link (or inside a link button)
-        let target = e.target.closest('a');
+                    if (!style || style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
+                        continue;
+                    }
 
-        if (target && target.href && target.href.startsWith('http')) {
+                    const text = (el.textContent || el.innerText || '').toLowerCase().replace(/\s+/g, ' ');
 
-            // STOP the website from actually downloading the file or opening an ad
-            e.preventDefault();
-            e.stopImmediatePropagation();
+                    if (text.includes('click to continue') || text.includes('get links') || text.includes('start') || text.includes('go to link')) {
+                        console.log("✅ Found active button! Triggering:", text);
 
-            // Copy the URL to your clipboard
-            navigator.clipboard.writeText(target.href).then(() => {
+                        if (el.tagName === 'A' && el.href && el.href.startsWith('http')) {
+                            window.location.replace(el.href);
+                            return;
+                        }
 
-                // Give visual feedback so you know it worked
-                const originalHTML = target.innerHTML;
-                const originalBg = target.style.backgroundColor || "";
-                const originalColor = target.style.color || "";
+                        el.click();
 
-                target.style.transition = "all 0.2s";
-                target.style.backgroundColor = "#28a745"; // Green success color
-                target.style.color = "#ffffff";
-                target.innerText = "✅ Direct Link Copied!";
-
-                // Revert the button and turn Copy Mode OFF after 1.5 seconds
-                setTimeout(() => {
-                    target.style.backgroundColor = originalBg;
-                    target.style.color = originalColor;
-                    target.innerHTML = originalHTML;
-
-                    isCopyMode = false;
-                    toggleBtn.innerHTML = "📋 Copy Mode: OFF";
-                    toggleBtn.style.backgroundColor = '#dc3545';
-                }, 1500);
-
-            }).catch(err => {
-                alert("Failed to copy link! Check console for errors.");
-                console.error("Clipboard Error:", err);
-            });
+                        ['mousedown', 'mouseup', 'click'].forEach(evt => {
+                            el.dispatchEvent(new MouseEvent(evt, { bubbles: true, cancelable: true, view: window }));
+                        });
+                    }
+                }
+            }, 500);
         }
-    }, true);
+
+        // ==========================================
+        // STAGE 1B: HBLinks (Select Hub Cloud)
+        // ==========================================
+        else if (host.includes('hblinks')) {
+            console.log("🚦 HBLinks: Looking for Hub Cloud...");
+
+            const loop = setInterval(() => {
+                const links = document.querySelectorAll('a');
+                for (let a of links) {
+                    const style = window.getComputedStyle(a);
+
+                    if (style && style.display !== 'none' && style.opacity !== '0') {
+                        const text = (a.textContent || '').toLowerCase();
+                        const href = (a.href || '').toLowerCase();
+
+                        if (text.includes('hub cloud') || text.includes('hubcloud') || href.includes('hubcloud')) {
+                            clearInterval(loop);
+                            console.log("✅ Hub Cloud found! Redirecting...");
+                            window.location.replace(a.href);
+                            return;
+                        }
+                    }
+                }
+            }, 500);
+        }
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startAutomation);
+    } else {
+        startAutomation();
+    }
 
 })();
